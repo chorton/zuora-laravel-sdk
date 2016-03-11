@@ -166,6 +166,14 @@ class API
                     'classmap' => $this->getClassMap(),
                     'cache_wsdl' => WSDL_CACHE_NONE,
                     'keep_alive' => false,
+                    'stream_context' => stream_context_create(
+                        [
+                            'ssl' => [
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                            ],
+                        ]
+                    )
                 ]
             );
             $this->client->__setLocation($this->config['endpoint']);
