@@ -269,6 +269,11 @@ class API
         return $result;
     }
 
+    public function getSession()
+    {
+        return $this->session;
+    }
+
     /**
      * Authorizes and stores session token.
      *
